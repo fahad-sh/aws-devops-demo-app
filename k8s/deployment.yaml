@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aws-devops-demo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: aws-devops-demo
+  template:
+    metadata:
+      labels:
+        app: aws-devops-demo
+    spec:
+      containers:
+      - name: aws-devops-demo
+        image: fahadsh/aws-devops-demo:v1
+        ports:
+        - containerPort: 5000
